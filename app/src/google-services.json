@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180249845034",
+    "project_id": "test-cee79",
+    "storage_bucket": "test-cee79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180249845034:android:160ae6fe0e9dece2a99253",
+        "android_client_info": {
+          "package_name": "com.gom.testdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180249845034-r8suo4uhg0dsbe9fttjv91lkp35plshu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoZs-dRGHiftAQfPyQmUJ2cPqBp-Usbag"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180249845034-r8suo4uhg0dsbe9fttjv91lkp35plshu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

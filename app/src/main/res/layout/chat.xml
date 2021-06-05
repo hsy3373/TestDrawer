@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    />
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:context=".Chatt.ChatActivity">-->
+
+<!--        &lt;!&ndash;app bar&ndash;&gt;-->
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/activity_chat_appBar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?actionBarSize"-->
+<!--            android:padding="5dp">-->
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                android:id="@+id/activity_chat_imgMyProfile"-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:src="@drawable/my_profile"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/activity_chat_txtUserName"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/stock_reading_free_reading"-->
+<!--                android:textSize="16sp"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:textColor="@color/black"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                />-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="48dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:scaleType="fitCenter"-->
+<!--                android:src="@drawable/nowtalk_icon_small"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="1.0"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/textView"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:contentDescription="@string/todo"  />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        &lt;!&ndash;공지&ndash;&gt;-->
+<!--        <LinearLayout-->
+<!--            android:id="@+id/activity_chat_lyNotice"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_below="@+id/activity_chat_appBar"-->
+<!--            android:background="@drawable/linearlayout_outline">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:src="@drawable/siren"-->
+<!--                android:padding="5dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                tools:ignore="ContentDescription" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/activity_chat_txtNotice"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/activity_chat_notice_message"-->
+<!--                android:layout_gravity="center_vertical"-->
+<!--                android:textColor="@color/gray"-->
+<!--                android:padding="5dp"/>-->
+
+<!--        </LinearLayout>-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:id="@+id/activity_chat_recycleView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/activity_chat_lyNotice"-->
+<!--            android:layout_above="@+id/activity_chat_bottom"-->
+<!--            android:background="@color/backgroundColor" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/activity_chat_bottom"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="5dp"-->
+<!--            android:background="#FFFFFF"-->
+<!--            android:layout_alignParentBottom="true">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/activity_chat_etSend"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_toStartOf="@+id/activity_chat_btnSend"-->
+<!--                android:layout_toEndOf="@+id/activity_chat_fabImgBtn"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:hint="@string/activity_chat_send_message"-->
+<!--                android:textColorHint="#8E8E8E"-->
+<!--                android:autofillHints=""-->
+<!--                android:inputType="textMultiLine" />-->
+
+
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/activity_chat_btnSend"-->
+<!--                android:layout_width="40dp"-->
+<!--                android:layout_height="40dp"-->
+<!--                android:background="@drawable/ic_baseline_send_24"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                tools:ignore="ContentDescription" />-->
+
+<!--            <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                android:id="@+id/activity_chat_fabImgBtn"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="bottom|end"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:src="@drawable/ic_baseline_add_24"-->
+<!--                app:backgroundTint="@color/floatingButton"-->
+<!--                app:fabSize="mini"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                tools:ignore="ContentDescription"/>-->
+<!--        </RelativeLayout>-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/activity_chat_fabImg"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_above="@+id/activity_chat_bottom"-->
+<!--            android:contentDescription="@string/content_description_fab_image"-->
+<!--            android:gravity="center"-->
+<!--            app:tint = "@null"-->
+<!--            app:backgroundTint="@color/white"-->
+<!--            android:src="@drawable/image_input"/>-->
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/activity_chat_fabVideo"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_above="@+id/activity_chat_fabImg"-->
+<!--            android:contentDescription="@string/content_description_fab_video"-->
+<!--            android:gravity="center"-->
+<!--            app:tint = "@null"-->
+<!--            app:backgroundTint="@color/white"-->
+<!--            android:src="@drawable/video_input_icon" />-->
+
+<!--    </RelativeLayout>-->
+
+<!--</androidx.drawerlayout.widget.DrawerLayout>-->

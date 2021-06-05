@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/chat_drawer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/new_chat_view"
+            app:layout_constraintBottom_toTopOf="@+id/test_layout"
+            app:layout_constraintTop_toTopOf="parent"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/activity_chat_appBar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:padding="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activity_chat_imgMyProfile"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:src="@drawable/my_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/activity_chat_txtUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stock_reading_free_reading"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <ImageView
+                android:id="@+id/open_chat_drawer"
+                android:layout_width="35dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/todo"  />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/activity_chat_lyNotice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/linearlayout_outline"
+            app:layout_constraintTop_toBottomOf="@+id/activity_chat_appBar"
+
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:src="@drawable/siren"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/activity_chat_txtNotice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/activity_chat_notice_message"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/gray"
+                android:padding="5dp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activity_chat_recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/backgroundColor"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/activity_chat_fabImgBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activity_chat_lyNotice" />
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_chat_fabImgBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/floatingButton"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toBottomOf="@+id/emoji"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/emoji"
+            tools:ignore="ContentDescription"
+            app:elevation="0dp"
+            app:tint="#FFFFFF"
+            android:backgroundTint="#C3C3C3"
+
+
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_chat_fabImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            android:visibility="invisible"
+            android:contentDescription="@string/content_description_fab_image"
+            android:gravity="center"
+            android:src="@drawable/image_input"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/activity_chat_fabImgBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@null" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/activity_chat_fabVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:visibility="invisible"
+            android:contentDescription="@string/content_description_fab_video"
+            android:gravity="center"
+            android:src="@drawable/video_input_icon"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/activity_chat_fabImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@null" />
+
+
+        <EditText
+            android:id="@+id/activity_chat_etSend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_toStartOf="@+id/activity_chat_btnSend"
+            android:layout_toEndOf="@+id/activity_chat_fabImgBtn"
+            android:autofillHints=""
+            android:background="@android:color/transparent"
+            android:hint="@string/activity_chat_send_message"
+            android:inputType="textMultiLine"
+            android:textColorHint="#8E8E8E"
+            app:layout_constraintBottom_toBottomOf="@+id/emoji"
+            app:layout_constraintEnd_toStartOf="@+id/emoji"
+            app:layout_constraintStart_toEndOf="@+id/activity_chat_fabImgBtn"
+            app:layout_constraintTop_toTopOf="@+id/emoji" />
+
+
+        <ImageButton
+            android:id="@+id/emoji"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignEnd="@+id/activity_chat_etSend"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/white"
+            android:src="@drawable/emoji"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toStartOf="@+id/activity_chat_btnSend"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <ImageButton
+            android:id="@+id/activity_chat_btnSend"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="@+id/emoji"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/emoji"
+            tools:ignore="ContentDescription" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/test_layout"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="#C6C6C6"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton1"
+                app:layout_constraintTop_toTopOf="@+id/imageButton1" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toTopOf="@+id/imageButton1" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton3"
+                app:layout_constraintTop_toTopOf="@+id/imageButton1" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton4"
+                app:layout_constraintTop_toTopOf="@+id/imageButton1" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton7"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton8"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton6"
+                app:layout_constraintTop_toTopOf="@+id/imageButton6" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton9"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton7"
+                app:layout_constraintTop_toTopOf="@+id/imageButton6" />
+
+            <ImageButton
+                android:id="@+id/imageButton9"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton10"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton8"
+                app:layout_constraintTop_toTopOf="@+id/imageButton6" />
+
+            <ImageButton
+                android:id="@+id/imageButton10"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:src="@mipmap/ic_launcher"
+                app:layout_constraintBottom_toBottomOf="@+id/imageButton6"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageButton9"
+                app:layout_constraintTop_toTopOf="@+id/imageButton6" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:fitsSystemWindows="true">
+        <!--        app:headerLayout="@layout/nav_header_main">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/top_name_bar"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:text="미스터레드방"
+                    android:textSize="20sp"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/manage_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="공지관리"
+                    android:background="@drawable/line_red"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/top_notice_list"
+                app:layout_constraintTop_toBottomOf="@+id/top_name_bar"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notice_list"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    />
+
+                <ImageView android:src="@drawable/line_sample"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/notice_recycler"
+                app:layout_constraintTop_toBottomOf="@id/top_notice_list"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_leading_list"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="10dp"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottom_leading_list"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.45"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/leading_list"
+                    android:layout_gravity="center"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    />
+
+
+
+                <ImageView android:src="@drawable/line_red"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginHorizontal="10dp"
+                    />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/leading_recycler"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/bottom_leading_list"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
+
+
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
